@@ -87,9 +87,9 @@ modules:
     sources:
       - type: file
         # From https://brave-browser-apt-release.s3.brave.com/dists/stable/main/binary-amd64/Packages
-        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.15.76_amd64.deb
-        sha256: 3b054584c2272a9eeb9029f754cabaf4804db295fd0e6b84ead680b08af38d48
-        size: 76582848
+        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.16.68_amd64.deb
+        sha256: 65caf4eb66af6e8da59c9989a8e1ec2c87fbe1a0a568c778aa25e673bd966b73
+        size: 77284466
         dest-filename: brave.deb
         only-arches: [x86_64]
         x-checker-data: 
