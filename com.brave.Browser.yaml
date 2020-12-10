@@ -9,23 +9,28 @@ separate-locales: false
 build-options:
   no-debuginfo: true
 finish-args:
-  - '--require-version=1.8.1'
   - '--device=all'
+  - '--env=GTK_PATH=/app/lib/gtkmodules'
   - '--share=ipc'
   - '--share=network'
+  - '--socket=cups'
   - '--socket=pulseaudio'
   - '--socket=x11'
-  - '--env=GTK_PATH=/app/lib/gtkmodules'
-  - '--socket=cups'
+  - '--socket=wayland'
+  - '--require-version=1.8.2'
+  - '--system-talk-name=org.freedesktop.UPower'
   - '--talk-name=org.freedesktop.FileManager1'
   - '--talk-name=org.freedesktop.Notifications'
   - '--talk-name=org.freedesktop.secrets'
   - '--talk-name=org.gnome.SessionManager'
-  - '--own-name=org.mpris.MediaPlayer2.chromium.*'
   - '--system-talk-name=org.freedesktop.Avahi'
-  - '--system-talk-name=org.freedesktop.GeoClue2'
-  - '--system-talk-name=org.freedesktop.UPower'
+  - '--own-name=org.mpris.MediaPlayer2.chrome.*'
+  - '--filesystem=host-etc'
+  - '--filesystem=xdg-run/pipewire-0'
+  - '--filesystem=xdg-documents'
   - '--filesystem=xdg-download'
+  - '--filesystem=xdg-music'
+  - '--filesystem=xdg-videos'
 modules:
   - shared-modules/libsecret/libsecret.json
 
@@ -60,11 +65,29 @@ modules:
       - type: file
         path: gtk-settings.ini
 
+  - name: pipewire
+    buildsystem: meson
+    config-opts:
+      - -Dgstreamer=disabled
+      - -Dman=false
+      - -Dsystemd=false
+    sources:
+      - type: git
+        url: https://gitlab.freedesktop.org/pipewire/pipewire.git
+        tag: 0.2.7
+
   - name: zypak
     sources:
       - type: git
         url: https://github.com/refi64/zypak
         tag: v2020.10beta.4
+
+  - name: flextop
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://github.com/refi64/flextop
+        commit: 485c332c7ec36a8b74be8f3622fc756ac6263f40
 
   - name: brave
     buildsystem: simple
@@ -82,9 +105,9 @@ modules:
       - 'install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml'
     sources:
       - type: file
-        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.17.75_amd64.deb
-        sha256: 183855e987d4c841863a5c16b479817a2c12ab15f2849094ec0706b900180f82
-        size: 77912348
+        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.18.70_amd64.deb
+        sha256: 12a1a905a1c451b69ef8fc7f227a8bb1671fa5ce48c323e21e71573b03c96923
+        size: 78101492
         dest-filename: brave.deb
         only-arches: [x86_64]
         x-checker-data: 
@@ -98,7 +121,6 @@ modules:
       - type: file
         path: com.brave.Browser.metainfo.xml
       - type: file
-        # From https://www.brave.com/static-assets/files/PublisherMediaAssets.zip
         path: brave_lion.svg
       - type: file
         path: mimic_warning.html
