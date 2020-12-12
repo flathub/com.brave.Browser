@@ -123,3 +123,5 @@ modules:
         path: brave_lion.svg
       - type: file
         path: mimic_warning.txt
+      - type: file
+        path: flatpak_policy.json
