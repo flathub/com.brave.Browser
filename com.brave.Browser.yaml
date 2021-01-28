@@ -78,7 +78,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        tag: v2020.10beta.4
+        tag: v2021.01.1
 
   - name: flextop
     buildsystem: meson
@@ -104,9 +104,9 @@ modules:
       - 'install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml'
     sources:
       - type: file
-        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.19.86_amd64.deb
-        sha256: 7e79317e1b984c328fad748d946d129600e5b388e7575e3ac2b87183572b47d7
-        size: 79744152
+        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.19.88_amd64.deb
+        sha256: 8f249e76f9bd5773b892b8b53e0a2a0b43ac0b582f074370c7c95ea146671cad
+        size: 79736672
         dest-filename: brave.deb
         only-arches: [x86_64]
         x-checker-data: 
