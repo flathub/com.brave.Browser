@@ -7,28 +7,28 @@ separate-locales: false
 build-options:
   no-debuginfo: true
 finish-args:
-  - '--device=all'
-  - '--env=GTK_PATH=/app/lib/gtkmodules'
-  - '--share=ipc'
-  - '--share=network'
-  - '--socket=cups'
-  - '--socket=pulseaudio'
-  - '--socket=x11'
-  - '--socket=wayland'
-  - '--require-version=1.8.2'
-  - '--system-talk-name=org.freedesktop.UPower'
-  - '--talk-name=org.freedesktop.FileManager1'
-  - '--talk-name=org.freedesktop.Notifications'
-  - '--talk-name=org.freedesktop.secrets'
-  - '--talk-name=org.gnome.SessionManager'
-  - '--system-talk-name=org.freedesktop.Avahi'
-  - '--own-name=org.mpris.MediaPlayer2.chrome.*'
-  - '--filesystem=host-etc'
-  - '--filesystem=xdg-run/pipewire-0'
-  - '--filesystem=xdg-documents'
-  - '--filesystem=xdg-download'
-  - '--filesystem=xdg-music'
-  - '--filesystem=xdg-videos'
+  - --device=all
+  - --env=GTK_PATH=/app/lib/gtkmodules
+  - --share=ipc
+  - --share=network
+  - --socket=cups
+  - --socket=pulseaudio
+  - --socket=x11
+  - --socket=wayland
+  - --require-version=1.8.2
+  - --system-talk-name=org.freedesktop.UPower
+  - --talk-name=org.freedesktop.FileManager1
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.gnome.SessionManager
+  - --system-talk-name=org.freedesktop.Avahi
+  - --own-name=org.mpris.MediaPlayer2.chrome.*
+  - --filesystem=host-etc
+  - --filesystem=xdg-run/pipewire-0
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-music
+  - --filesystem=xdg-videos
 modules:
   - shared-modules/libsecret/libsecret.json
 
@@ -55,10 +55,11 @@ modules:
         url: https://gitlab.gnome.org/GNOME/gtk.git
         tag: 3.24.23
 
+        commit: 016e8c55ab924c9ef4d32c8cb06253b1dc1be60d
   - name: gtk-settings
     buildsystem: simple
     build-commands:
-      - 'install -Dm 644 gtk-settings.ini /app/etc/xdg/gtk-3.0/settings.ini'
+      - install -Dm 644 gtk-settings.ini /app/etc/xdg/gtk-3.0/settings.ini
     sources:
       - type: file
         path: gtk-settings.ini
@@ -74,12 +75,14 @@ modules:
         url: https://gitlab.freedesktop.org/pipewire/pipewire.git
         tag: 0.2.7
 
+        commit: 14c11c0fe4d366bad4cfecdee97b6652ff9ed63d
   - name: zypak
     sources:
       - type: git
         url: https://github.com/refi64/zypak
         tag: v2021.01.1
 
+        commit: e16b0e37f94915707f03d6d2a827bec927b59d26
   - name: flextop
     buildsystem: meson
     sources:
@@ -90,18 +93,20 @@ modules:
   - name: brave
     buildsystem: simple
     build-commands:
-      - 'mkdir -p /app/brave'
-      - 'ar x brave.deb data.tar.xz'
-      - 'tar -xvf data.tar.xz --strip-components=4 -C /app/brave ./opt/brave.com/brave'
-      - 'tar -xvf data.tar.xz ./usr/share/applications/brave-browser.desktop --strip-components=4 -C .'
-      - 'sed -e "s/Exec=\/usr\/bin\/brave-browser-stable/Exec=\/app\/bin\/brave/g" -i brave-browser.desktop'
-      - 'sed -e "s/Icon=brave-browser/Icon=com.brave.Browser/g" -i brave-browser.desktop'
-      - 'install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser.desktop'
-      - 'install -Dm 644 brave_lion.svg /app/share/icons/hicolor/scalable/apps/com.brave.Browser.svg'
-      - 'install -Dm 755 brave.sh /app/bin/brave'
-      - 'install -Dm 644 -t /app/share/flatpak-brave flatpak_policy.json'
-      - 'install -Dm 644 -t /app/share/flatpak-brave mimic_warning.txt'
-      - 'install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml'
+      - mkdir -p /app/brave
+      - ar x brave.deb data.tar.xz
+      - tar -xvf data.tar.xz --strip-components=4 -C /app/brave ./opt/brave.com/brave
+      - tar -xvf data.tar.xz ./usr/share/applications/brave-browser.desktop --strip-components=4
+        -C .
+      - sed -e "s/Exec=\/usr\/bin\/brave-browser-stable/Exec=\/app\/bin\/brave/g"
+        -i brave-browser.desktop
+      - sed -e "s/Icon=brave-browser/Icon=com.brave.Browser/g" -i brave-browser.desktop
+      - install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser.desktop
+      - install -Dm 644 brave_lion.svg /app/share/icons/hicolor/scalable/apps/com.brave.Browser.svg
+      - install -Dm 755 brave.sh /app/bin/brave
+      - install -Dm 644 -t /app/share/flatpak-brave flatpak_policy.json
+      - install -Dm 644 -t /app/share/flatpak-brave mimic_warning.txt
+      - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
         url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.20.103_amd64.deb
@@ -109,7 +114,7 @@ modules:
         size: 79715044
         dest-filename: brave.deb
         only-arches: [x86_64]
-        x-checker-data: 
+        x-checker-data:
           type: debian-repo
           package-name: brave-browser
           root: https://brave-browser-apt-release.s3.brave.com/
