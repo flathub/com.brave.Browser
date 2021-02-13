@@ -41,5 +41,7 @@ fi
 export XCURSOR_PATH=$(echo "$XDG_DATA_DIRS" | sed 's,\(:\|$\),/icons\1,g')
 export CHROME_WRAPPER=$(readlink -f "$0")
 export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
+export \
+  ZYPAK_EXPOSE_WIDEVINE_PATH="$XDG_CONFIG_HOME/BraveSoftware/Brave-Browser/WidevineCdm"
 
 exec zypak-wrapper.sh /app/brave/brave "$@"
