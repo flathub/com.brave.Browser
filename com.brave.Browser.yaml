@@ -80,8 +80,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        tag: v2021.02beta.1
-        commit: aca8f1edfcbe2a9522e745280006c9e1aac160c2
+        tag: v2021.02
+        commit: ae8b0423588479d8403c192feb630c582656bee6
   - name: flextop
     buildsystem: meson
     sources:
