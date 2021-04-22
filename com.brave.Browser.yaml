@@ -108,8 +108,8 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.23.71_amd64.deb
-        sha256: 3010e1dc84f99fb1fc8dea95bd628ef0acc137ca3038b9bdb894f7d277b0529d
+        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.23.73_amd64.deb
+        sha256: 68d0e0abd5fec9288d7ca512f1a85216c8fed78070a7890aab81100436d6c912
         dest-filename: brave.deb
         only-arches: [x86_64]
         x-checker-data:
