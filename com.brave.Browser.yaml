@@ -110,7 +110,7 @@ modules:
         x-checker-data:
           type: html
           url: https://brave-browser-downloads.s3.brave.com/latest/release.version
-          version-pattern: (.*)
+          version-pattern: ([\d\.-]+)
           url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
       - type: file
         path: brave.sh
