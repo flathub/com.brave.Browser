@@ -108,9 +108,10 @@ modules:
         dest-filename: brave.zip
         only-arches: [x86_64]
         x-checker-data:
-          type: rotating-url
+          type: html
           url: https://brave-browser-downloads.s3.brave.com/latest/release.version
-          pattern: https://github.com/brave/brave-browser/releases/download/v([0-9.]+)/brave-browser-([0-9.]+)-linux-amd64.zip
+          version-pattern: (.*)
+          url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
       - type: file
         path: brave.sh
       - type: file
