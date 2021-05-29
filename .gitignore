@@ -1,2 +1,15 @@
-_build/
-.flatpak-builder/
+**
+!brave_lion.svg
+!brave.sh
+!com.brave.Browser.metainfo.xml
+!com.brave.Browser.yaml
+!flathub.json
+!flatpak_policy.json
+!.gitignore
+!.gitmodules
+!gtk-settings.ini
+!libsecret.json
+!mimic_warning.txt
+!shared-modules
+!shared-modules/**
+!brave-browser.desktop

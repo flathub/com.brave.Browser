@@ -94,13 +94,7 @@ modules:
     buildsystem: simple
     build-commands:
       - mkdir -p /app/brave
-      - ar x brave.deb data.tar.xz
-      - tar -xvf data.tar.xz --strip-components=4 -C /app/brave ./opt/brave.com/brave
-      - tar -xvf data.tar.xz ./usr/share/applications/brave-browser.desktop --strip-components=4
-        -C .
-      - sed -e "s/Exec=\/usr\/bin\/brave-browser-stable/Exec=\/app\/bin\/brave/g"
-        -i brave-browser.desktop
-      - sed -e "s/Icon=brave-browser/Icon=com.brave.Browser/g" -i brave-browser.desktop
+      - bsdtar -xf brave.zip -C /app/brave
       - install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser.desktop
       - install -Dm 644 brave_lion.svg /app/share/icons/hicolor/scalable/apps/com.brave.Browser.svg
       - install -Dm 755 brave.sh /app/bin/brave
@@ -109,16 +103,14 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_1.25.68_amd64.deb
-        sha256: 3817f8d8bea972d7e534b8ed71b9f0db02a8ed38ac452305dd2ae20cf16507a2
-        dest-filename: brave.deb
+        url: https://github.com/brave/brave-browser/releases/download/v1.25.68/brave-browser-1.25.68-linux-amd64.zip
+        sha256: 386e0b3d5dcb2a4ff5effc39df1f3f76bac2b9e7623d141e0f39f97f5659affa
+        dest-filename: brave.zip
         only-arches: [x86_64]
         x-checker-data:
-          type: debian-repo
-          package-name: brave-browser
-          root: https://brave-browser-apt-release.s3.brave.com/
-          dist: stable
-          component: main
+          type: rotating-url
+          url: https://brave-browser-downloads.s3.brave.com/latest/release.version
+          pattern: https://github.com/brave/brave-browser/releases/download/v([0-9.]+)/brave-browser-([0-9.]+)-linux-amd64.zip
       - type: file
         path: brave.sh
       - type: file
@@ -129,3 +121,5 @@ modules:
         path: mimic_warning.txt
       - type: file
         path: flatpak_policy.json
+      - type: file
+        path: brave-browser.desktop
