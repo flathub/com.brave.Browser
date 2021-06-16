@@ -29,6 +29,7 @@ finish-args:
   - --filesystem=xdg-download
   - --filesystem=xdg-music
   - --filesystem=xdg-videos
+  - --filesystem=xdg-desktop
 modules:
   - libsecret.json
 
