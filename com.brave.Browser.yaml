@@ -22,7 +22,7 @@ finish-args:
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.gnome.SessionManager
   - --system-talk-name=org.freedesktop.Avahi
-  - --own-name=org.mpris.MediaPlayer2.chrome.*
+  - --own-name=org.mpris.MediaPlayer2.chromium.*
   - --filesystem=host-etc
   - --filesystem=xdg-run/pipewire-0
   - --filesystem=xdg-documents
@@ -57,7 +57,6 @@ modules:
         url: https://gitlab.gnome.org/GNOME/gtk.git
         tag: 3.24.23
 
-        commit: 016e8c55ab924c9ef4d32c8cb06253b1dc1be60d
   - name: gtk-settings
     buildsystem: simple
     build-commands:
@@ -77,19 +76,18 @@ modules:
         url: https://github.com/pipewire/pipewire.git
         tag: 0.2.7
 
-        commit: 14c11c0fe4d366bad4cfecdee97b6652ff9ed63d
   - name: zypak
     sources:
       - type: git
         url: https://github.com/refi64/zypak
         tag: v2021.06
-        commit: 89dd114427a114028f249ed9b2824d083f459eb5
+
   - name: flextop
     buildsystem: meson
     sources:
       - type: git
         url: https://github.com/refi64/flextop
-        commit: 485c332c7ec36a8b74be8f3622fc756ac6263f40
+        commit: 9f66dac84388f520ecab5ac4fa60df6343b7db5b
 
   - name: brave
     buildsystem: simple
