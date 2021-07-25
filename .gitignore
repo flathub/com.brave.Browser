@@ -13,3 +13,4 @@
 !shared-modules
 !shared-modules/**
 !brave-browser.desktop
+!cobalt.ini

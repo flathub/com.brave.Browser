@@ -89,6 +89,13 @@ modules:
         url: https://github.com/refi64/flextop
         commit: 9f66dac84388f520ecab5ac4fa60df6343b7db5b
 
+  - name: cobalt
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://github.com/refi64/cobalt
+        commit: v2021.07.1
+
   - name: brave
     buildsystem: simple
     build-commands:
@@ -97,8 +104,8 @@ modules:
       - install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser.desktop
       - install -Dm 644 brave_lion.svg /app/share/icons/hicolor/scalable/apps/com.brave.Browser.svg
       - install -Dm 755 brave.sh /app/bin/brave
+      - install -Dm 644 -t /app/etc cobalt.ini
       - install -Dm 644 -t /app/share/flatpak-brave flatpak_policy.json
-      - install -Dm 644 -t /app/share/flatpak-brave mimic_warning.txt
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
@@ -111,14 +118,16 @@ modules:
           url: https://brave-browser-downloads.s3.brave.com/latest/release.version
           version-pattern: ([\d\.-]+)
           url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
+      - type: script
+        dest-filename: brave.sh
+        commands:
+          - 'exec cobalt "$@"'
       - type: file
-        path: brave.sh
+        path: cobalt.ini
       - type: file
         path: com.brave.Browser.metainfo.xml
       - type: file
         path: brave_lion.svg
-      - type: file
-        path: mimic_warning.txt
       - type: file
         path: flatpak_policy.json
       - type: file
