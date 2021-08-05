@@ -130,6 +130,7 @@ modules:
           url: https://brave-browser-downloads.s3.brave.com/latest/release.version
           version-pattern: ([\d\.-]+)
           url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
+          is-main-source: true
       - type: script
         dest-filename: brave.sh
         commands:
