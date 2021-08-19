@@ -32,6 +32,7 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.28.106" date="2021-08-19"/>
     <release version="1.28.105" date="2021-08-11"/>
     <release version="1.27.111" date="2021-08-06"/>
     <release version="1.27.108" date="2021-07-23"/>
@@ -52,6 +53,6 @@
     <release version="1.15.76" date="2020-10-21"/>
     <release version="1.14.84" date="2020-08-25"/>
   </releases>
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
   <update_contact>rany2@riseup.net</update_contact>
 </component>
