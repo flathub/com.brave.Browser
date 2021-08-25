@@ -30,6 +30,7 @@ finish-args:
   - --filesystem=xdg-music
   - --filesystem=xdg-videos
   - --filesystem=xdg-desktop
+  - --persist=.pki
 modules:
   - libsecret.json
 
