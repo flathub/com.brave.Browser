@@ -81,8 +81,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        tag: v2021.06
-        commit: 89dd114427a114028f249ed9b2824d083f459eb5
+        tag: v2021.09.1
+        commit: e09f37ca4ff09827434deba11f9b1f9e1c42dbaf
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -122,8 +122,8 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.29.76/brave-browser-1.29.76-linux-amd64.zip
-        sha256: 0768c7c15724c188b2a04e895289106dbcff0260b1ac806dd460a64374096b4c
+        url: https://github.com/brave/brave-browser/releases/download/v1.29.77/brave-browser-1.29.77-linux-amd64.zip
+        sha256: 4e8cdeb839659d5cca3ddfd4811ec51539e018ae3510693502cedab22b663459
         dest-filename: brave.zip
         only-arches: [x86_64]
         x-checker-data:
