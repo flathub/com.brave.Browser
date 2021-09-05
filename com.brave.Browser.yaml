@@ -1,6 +1,6 @@
 app-id: com.brave.Browser
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: "21.08"
 sdk: org.freedesktop.Sdk
 command: brave
 separate-locales: false
@@ -57,6 +57,9 @@ modules:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gtk.git
         tag: 3.24.23
+      # From https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gtk3-werror.patch
+      - type: patch
+        path: gtk3-werror.patch
 
   - name: gtk-settings
     buildsystem: simple
@@ -65,17 +68,6 @@ modules:
     sources:
       - type: file
         path: gtk-settings.ini
-
-  - name: pipewire
-    buildsystem: meson
-    config-opts:
-      - -Dgstreamer=disabled
-      - -Dman=false
-      - -Dsystemd=false
-    sources:
-      - type: git
-        url: https://github.com/pipewire/pipewire.git
-        tag: 0.2.7
 
   - name: zypak
     sources:
