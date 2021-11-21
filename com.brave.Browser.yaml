@@ -109,6 +109,17 @@ modules:
           type: git
           tag-pattern: ^v([\d.]+)$
 
+  - name: krb5
+    subdir: src
+    sources:
+      - type: archive
+        url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.1.tar.gz
+        sha256: fa16f87eb7e3ec3586143c800d7eaff98b5e0dcdf0772af7d98612e49dbeb20b
+      - type: file
+        path: krb5.conf
+    post-install:
+      - install -Dm644 ../krb5.conf /app/etc/krb5.conf
+
   - name: brave
     buildsystem: simple
     build-commands:
