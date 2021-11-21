@@ -1,6 +1,6 @@
 app-id: com.brave.Browser
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: brave
 separate-locales: false
@@ -57,6 +57,9 @@ modules:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gtk.git
         tag: 3.24.23
+      # From https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gtk3-werror.patch
+      - type: patch
+        path: gtk3-werror.patch
 
   - name: gtk-settings
     buildsystem: simple
@@ -66,23 +69,12 @@ modules:
       - type: file
         path: gtk-settings.ini
 
-  - name: pipewire
-    buildsystem: meson
-    config-opts:
-      - -Dgstreamer=disabled
-      - -Dman=false
-      - -Dsystemd=false
-    sources:
-      - type: git
-        url: https://github.com/pipewire/pipewire.git
-        tag: 0.2.7
-
   - name: zypak
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        tag: v2021.06
-        commit: 89dd114427a114028f249ed9b2824d083f459eb5
+        tag: v2021.09.1
+        commit: e09f37ca4ff09827434deba11f9b1f9e1c42dbaf
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -103,8 +95,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/cobalt
-        tag: v2021.07.3
-        commit: a121df576c5d496bb214965a1217dc092876b091
+        tag: v2021.10.1
+        commit: ff38b201b83ca01c112ffc0ed05defdcdfd53e8a
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -133,8 +125,8 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.28.106/brave-browser-1.28.106-linux-amd64.zip
-        sha256: dbed50ab91cd99ee15a84cb7977a395b2510e1dd2ee10ba437763fe72b180f23
+        url: https://github.com/brave/brave-browser/releases/download/v1.32.106/brave-browser-1.32.106-linux-amd64.zip
+        sha256: d4b14f4b2b0f280c2e87a154b3526e16d9a65a107aa279d482b943f90104fcb6
         dest-filename: brave.zip
         only-arches: [x86_64]
         x-checker-data:
