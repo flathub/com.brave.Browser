@@ -14,3 +14,4 @@
 !shared-modules/**
 !brave-browser.desktop
 !cobalt.ini
+!krb5.conf
