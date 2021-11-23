@@ -30,6 +30,7 @@ finish-args:
   - --filesystem=xdg-music
   - --filesystem=xdg-videos
   - --filesystem=xdg-desktop
+  - --filesystem=/run/.heim_org.h5l.kcm-socket
   - --persist=.pki
 modules:
   - libsecret.json
