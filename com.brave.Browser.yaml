@@ -150,3 +150,5 @@ modules:
         path: flatpak_policy.json
       - type: file
         path: brave-browser.desktop
+      - type: file
+        path: brave.sh
