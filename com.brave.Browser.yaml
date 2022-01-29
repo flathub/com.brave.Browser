@@ -136,10 +136,6 @@ modules:
           version-pattern: ([\d\.-]+)
           url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
           is-main-source: true
-      - type: script
-        dest-filename: brave.sh
-        commands:
-          - exec cobalt "$@"
       - type: file
         path: cobalt.ini
       - type: file
