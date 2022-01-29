@@ -1,4 +1,4 @@
-#!/usr/bin/bash -x
+#!/usr/bin/bash
 
 # Merge the policies with the host ones.
 policy_root=/etc/brave/policies
@@ -12,7 +12,8 @@ for policy_type in managed recommended; do
   fi
 
   if [[ -d "/run/host/$policy_root/$policy_type" ]]; then
-    find "/run/host/$policy_root/$policy_type" -name '*.json' \
+    find "/run/host/$policy_root/$policy_type" \
+      -maxdepth 1 -name '*.json' -type f \
       -exec ln -sf '{}' "$policy_root/$policy_type" \;
   fi
 done
