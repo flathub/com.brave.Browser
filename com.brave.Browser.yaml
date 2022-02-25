@@ -21,6 +21,7 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.gnome.SessionManager
+  - --talk-name=org.gnome.Mutter.IdleMonitor.*
   - --system-talk-name=org.freedesktop.Avahi
   - --own-name=org.mpris.MediaPlayer2.chromium.*
   - --filesystem=host-etc
