@@ -15,3 +15,4 @@
 !brave-browser.desktop
 !cobalt.ini
 !krb5.conf
+!dconf-override.patch
