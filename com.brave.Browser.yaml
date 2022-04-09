@@ -76,30 +76,28 @@ modules:
     build-commands:
       - mkdir -p /app/brave
       - bsdtar -xf brave.zip -C /app/brave
-      - install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser.desktop
-      - install -Dm 644 brave_lion.svg /app/share/icons/hicolor/scalable/apps/com.brave.Browser.svg
+      - install -Dm 644 /app/brave/product_logo_128_beta.png /usr/share/icons/hicolor/128x128/apps/com.brave.Browser-beta.png
+      - install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser-beta.desktop
       - install -Dm 755 brave.sh /app/bin/brave
       - install -Dm 644 -t /app/etc cobalt.ini
       - install -Dm 644 -t /app/share/flatpak-brave flatpak_policy.json
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.37.111/brave-browser-1.37.111-linux-amd64.zip
+        url: https://github.com/brave/brave-browser/releases/download/v1.38.87/brave-browser-beta-1.38.87-linux-amd64.zip
         sha256: 05470901e9f19bd45cbb54008f0bf53b01360d0f4340c52ff805f3454c3d3da7
         dest-filename: brave.zip
         only-arches: [x86_64]
         x-checker-data:
           type: html
-          url: https://brave-browser-downloads.s3.brave.com/latest/release.version
+          url: https://brave-browser-downloads.s3.brave.com/latest/beta.version
           version-pattern: ([\d\.-]+)
-          url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
+          url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-beta-$version-linux-amd64.zip
           is-main-source: true
       - type: file
         path: cobalt.ini
       - type: file
         path: com.brave.Browser.metainfo.xml
-      - type: file
-        path: brave_lion.svg
       - type: file
         path: flatpak_policy.json
       - type: file
