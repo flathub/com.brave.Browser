@@ -22,4 +22,4 @@ jobs:
           EMAIL: github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: --update --never-fork com.microsoft.Edge.yaml
+          args: --update --never-fork com.brave.Browser.yaml
