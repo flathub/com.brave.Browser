@@ -28,8 +28,8 @@ finish-args:
   - --system-talk-name=org.freedesktop.Avahi
   - --own-name=org.mpris.MediaPlayer2.chromium.*
   - --filesystem=host-etc
-  - --filesystem=home/.local/share/applications
-  - --filesystem=home/.local/share/icons
+  - --filesystem=home/.local/share/applications:create
+  - --filesystem=home/.local/share/icons:create
   - --filesystem=xdg-run/pipewire-0
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
