@@ -23,6 +23,7 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.kde.kwalletd5
   - --talk-name=org.gnome.SessionManager
   - --talk-name=org.gnome.Mutter.IdleMonitor.*
   - --system-talk-name=org.freedesktop.Avahi
