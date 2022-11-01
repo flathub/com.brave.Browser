@@ -1,9 +1,9 @@
 app-id: com.brave.Browser
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 base: org.chromium.Chromium.BaseApp
-base-version: '21.08'
+base-version: '22.08'
 command: brave
 separate-locales: false
 build-options:
@@ -83,7 +83,6 @@ modules:
       - install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser.desktop
       - install -Dm 755 brave.sh /app/bin/brave
       - install -Dm 644 -t /app/etc cobalt.ini
-      - install -Dm 644 -t /app/share/flatpak-brave flatpak_policy.json
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
@@ -101,8 +100,6 @@ modules:
         path: cobalt.ini
       - type: file
         path: com.brave.Browser.metainfo.xml
-      - type: file
-        path: flatpak_policy.json
       - type: file
         path: brave-browser.desktop
       - type: file
