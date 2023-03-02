@@ -108,6 +108,16 @@ modules:
           url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
           is-main-source: true
       - type: file
+        url: https://github.com/brave/brave-browser/releases/download/v1.48.171/brave-browser-1.48.171-linux-arm64.zip
+        sha256: b9239e113463c130c75c1c9f8b5c81d1787f0aaa0b5b019363683cb1a842b5f9
+        dest-filename: brave.zip
+        only-arches: [arm64]
+        x-checker-data:
+          type: html
+          url: https://brave-browser-downloads.s3.brave.com/latest/release-linux-arm64.version
+          version-pattern: ([\d\.-]+)
+          url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
+      - type: file
         path: cobalt.ini
       - type: file
         path: com.brave.Browser.metainfo.xml
