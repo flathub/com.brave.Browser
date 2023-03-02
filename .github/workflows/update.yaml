@@ -13,8 +13,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ matrix.branch }}
-      - run: sudo git config --system --add safe.directory "$GITHUB_WORKSPACE"
-      - run: sudo git config --system --add safe.directory "/github/workspace"
       - uses: docker://ghcr.io/flathub/flatpak-external-data-checker:latest
         env:
           GIT_AUTHOR_NAME: Flatpak External Data Checker
@@ -24,4 +22,5 @@ jobs:
           EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: --update --never-fork com.brave.Browser.yaml
+          entrypoint: /bin/bash
+          args: -c "git config --global --add safe.directory /github/workspace && cd /github/workspace && /app/flatpak-external-data-checker --update --never-fork com.brave.Browser.yaml"
