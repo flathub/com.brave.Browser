@@ -14,6 +14,7 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
       - run: sudo git config --system --add safe.directory "$GITHUB_WORKSPACE"
+      - run: sudo git config --system --add safe.directory "/github/workspace"
       - uses: docker://ghcr.io/flathub/flatpak-external-data-checker:latest
         env:
           GIT_AUTHOR_NAME: Flatpak External Data Checker
