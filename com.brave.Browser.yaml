@@ -34,6 +34,7 @@ finish-args:
   - --filesystem=home/.local/share/applications:create
   - --filesystem=home/.local/share/icons:create
   - --filesystem=xdg-run/pipewire-0
+  - --filesystem=xdg-desktop
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
   - --filesystem=xdg-music
