@@ -30,16 +30,13 @@ finish-args:
   - --talk-name=org.gnome.Mutter.IdleMonitor.*
   - --system-talk-name=org.freedesktop.Avahi
   - --own-name=org.mpris.MediaPlayer2.chromium.*
+  - --filesystem=xdg-run/pipewire-0
+  # To load policies on the host /etc/brave/policies
   - --filesystem=host-etc
+  # To install a PWA application
   - --filesystem=home/.local/share/applications:create
   - --filesystem=home/.local/share/icons:create
-  - --filesystem=xdg-run/pipewire-0
   - --filesystem=xdg-desktop
-  - --filesystem=xdg-documents
-  - --filesystem=xdg-download
-  - --filesystem=xdg-music
-  - --filesystem=xdg-videos
-  - --filesystem=xdg-pictures
   # For GNOME proxy resolution
   - --filesystem=xdg-run/dconf
   - --filesystem=~/.config/dconf:ro
