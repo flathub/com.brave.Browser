@@ -28,7 +28,7 @@ finish-args:
   - --talk-name=org.gnome.SessionManager
   - --talk-name=org.gnome.Mutter.IdleMonitor.*
   - --system-talk-name=org.freedesktop.Avahi
-  - --own-name=org.mpris.MediaPlayer2.chromium.*
+  - --own-name=org.mpris.MediaPlayer2.brave.*
   - --filesystem=xdg-run/pipewire-0
   # To load policies on the host /etc/brave/policies
   - --filesystem=host-etc
