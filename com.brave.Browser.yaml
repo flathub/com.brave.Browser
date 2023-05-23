@@ -97,8 +97,8 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.52.102/brave-browser-beta-1.52.102-linux-amd64.zip
-        sha256: 5d2a9f6da0af48e72454efa9c0d76df32a341cd87188c4411e7c1eb1ddfb450e
+        url: https://github.com/brave/brave-browser/releases/download/v1.52.109/brave-browser-beta-1.52.109-linux-amd64.zip
+        sha256: eb6028fce82ff02e03fe17559765ed63774d8d9d3148a1baae6ef5bce4b9575f
         dest-filename: brave.zip
         only-arches: [x86_64]
         x-checker-data:
@@ -108,8 +108,8 @@ modules:
           url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-beta-$version-linux-amd64.zip
           is-main-source: true
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.52.102/brave-browser-beta-1.52.102-linux-arm64.zip
-        sha256: 7824eb19fbe5c173c3b94e1a79c0cb6ba9cdc5d281e02e5c60e3e635fa17f2d4
+        url: https://github.com/brave/brave-browser/releases/download/v1.52.109/brave-browser-beta-1.52.109-linux-arm64.zip
+        sha256: ffc29492de6f5382bff046454c5d54d85f36fee4e4b2ff84597aea34b05a7696
         dest-filename: brave.zip
         only-arches: [aarch64]
         x-checker-data:
