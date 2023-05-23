@@ -108,7 +108,7 @@ Comment[zh_TW]=連線到網際網路
 StartupNotify=true
 StartupWMClass=brave-browser
 TryExec=brave
-Exec=brave %U --enable-features=UseOzonePlatform --ozone-platform-hint=auto
+Exec=brave %U --enable-features=TouchpadOverscrollHistoryNavigation
 Terminal=false
 Icon=com.brave.Browser
 Type=Application
