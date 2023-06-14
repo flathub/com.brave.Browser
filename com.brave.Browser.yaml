@@ -50,6 +50,8 @@ finish-args:
   - --filesystem=~/.config/kioslaverc
   - --filesystem=/run/.heim_org.h5l.kcm-socket
   - --persist=.pki
+  # Avoid constant requests to set as default browser
+  - --no-default-browser-check
 modules:
   - name: dconf
     buildsystem: meson
