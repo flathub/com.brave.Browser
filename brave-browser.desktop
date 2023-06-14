@@ -108,7 +108,7 @@ Comment[zh_TW]=連線到網際網路
 StartupNotify=true
 StartupWMClass=brave-browser
 TryExec=brave
-Exec=brave %U
+Exec=brave %U --no-default-browser-check
 Terminal=false
 Icon=com.brave.Browser
 Type=Application
@@ -168,7 +168,7 @@ Name[uk]=Нове вікно
 Name[vi]=Cửa sổ Mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=brave
+Exec=brave --no-default-browser-check
 
 [Desktop Action new-private-window]
 Name=New Incognito Window
@@ -220,5 +220,5 @@ Name[uk]=Нове вікно в режимі анонімного перегля
 Name[vi]=Cửa sổ ẩn danh mới
 Name[zh_CN]=新建隐身窗口
 Name[zh_TW]=新增無痕式視窗
-Exec=brave --incognito
+Exec=brave --incognito --no-default-browser-check
 MimeType=x-scheme-handler/unknown;x-scheme-handler/about;text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;
