@@ -14,4 +14,4 @@ for policy_type in managed recommended enrollment; do
   fi
 done
 
-exec cobalt "$@"
+exec cobalt "$@" --no-default-browser-check
