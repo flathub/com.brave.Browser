@@ -98,8 +98,8 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.56.9/brave-browser-1.56.9-linux-amd64.zip
-        sha256: 5904943b2454d48fa77e583aacf1e2b28b02b6acbc9c86ee4f83aeefd33cd8eb
+        url: https://github.com/brave/brave-browser/releases/download/v1.56.11/brave-browser-1.56.11-linux-amd64.zip
+        sha256: ab64b447baf3d3f61be6be385e9681ae3c0ae79ae56ca58b354cfbe542b595ed
         dest-filename: brave.zip
         only-arches: [x86_64]
         x-checker-data:
@@ -109,8 +109,8 @@ modules:
           url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-$version-linux-amd64.zip
           is-main-source: true
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.56.9/brave-browser-1.56.9-linux-arm64.zip
-        sha256: f51e4bc6ab7032dca94f380bbfe9d7af5a4cdf1b46dbad66abb8c15c509de148
+        url: https://github.com/brave/brave-browser/releases/download/v1.56.11/brave-browser-1.56.11-linux-arm64.zip
+        sha256: 8d30210716b747a42d24f0ec8137bc7e45d5be563bf639863c5c6e80c78a798f
         dest-filename: brave.zip
         only-arches: [aarch64]
         x-checker-data:
