@@ -108,8 +108,8 @@ modules:
           url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-beta-$version-linux-amd64.zip
           is-main-source: true
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.61.53/brave-browser-beta-1.61.53-linux-arm64.zip
-        sha256: b4b770172a6cb52592526deda42fcf7469b0cbb3d7554f65c0a43489a27db680
+        url: https://github.com/brave/brave-browser/releases/download/v1.61.59/brave-browser-beta-1.61.59-linux-arm64.zip
+        sha256: 8035493e62d546c4f9ff4188e27b23b1fb4abfbb05b749c3c2ee2c0a3c543875
         dest-filename: brave.zip
         only-arches: [aarch64]
         x-checker-data:
