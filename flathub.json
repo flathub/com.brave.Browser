@@ -4,5 +4,6 @@
     "aarch64"
   ],
   "automerge-flathubbot-prs": true,
-  "disable-external-data-checker": true
+  "disable-external-data-checker": true,
+  "publish-delay-hours": 0
 }
