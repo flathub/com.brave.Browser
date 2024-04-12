@@ -101,22 +101,11 @@ modules:
         sha256: 7689a4d2dae4f51644154495e322dd1650797e67b5acb4ff9606976438e523a8
         dest-filename: brave.zip
         only-arches: [x86_64]
-        x-checker-data:
-          type: html
-          url: https://brave-browser-downloads.s3.brave.com/latest/beta-linux-x64.version
-          version-pattern: ([\d\.-]+)
-          url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-beta-$version-linux-amd64.zip
-          is-main-source: true
       - type: file
         url: https://github.com/brave/brave-browser/releases/download/v1.65.108/brave-browser-beta-1.65.108-linux-arm64.zip
         sha256: b9d2d23dfc6e43c4e0e1c50f70a5bd8afe41e6fabe2c9b3529d217fa6550d441
         dest-filename: brave.zip
         only-arches: [aarch64]
-        x-checker-data:
-          type: html
-          url: https://brave-browser-downloads.s3.brave.com/latest/beta-linux-arm64.version
-          version-pattern: ([\d\.-]+)
-          url-template: https://github.com/brave/brave-browser/releases/download/v$version/brave-browser-beta-$version-linux-arm64.zip
       - type: file
         path: cobalt.ini
       - type: file
