@@ -9,6 +9,7 @@ separate-locales: false
 build-options:
   no-debuginfo: true
 finish-args:
+  - --allow=multiarch
   - --device=all
   - --env=GTK_PATH=/app/lib/gtkmodules
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
@@ -98,13 +99,13 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.64.122/brave-browser-1.64.122-linux-amd64.zip
-        sha256: 50016343dda13f33da848bb19f17847abf0c8d3ae7397834199fecff268e82c2
+        url: https://github.com/brave/brave-browser/releases/download/v1.65.123/brave-browser-1.65.123-linux-amd64.zip
+        sha256: 88ba458287bd09dd2e12f7d8ed61397e526497e2d0c30a8d21a9d34b41ad5dd0
         dest-filename: brave.zip
         only-arches: [x86_64]
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.64.122/brave-browser-1.64.122-linux-arm64.zip
-        sha256: fc9305d60824ed5d0ecfd8af23b3f88dd664256fc56fc12a993914e59d1037d6
+        url: https://github.com/brave/brave-browser/releases/download/v1.65.123/brave-browser-1.65.123-linux-arm64.zip
+        sha256: 5e997bb76566acb588c90b4713d8b09e02719a0c7448c8b064c2c256b9d6fcbf
         dest-filename: brave.zip
         only-arches: [aarch64]
       - type: file
