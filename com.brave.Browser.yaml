@@ -100,13 +100,13 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.67.100/brave-browser-beta-1.67.100-linux-amd64.zip
-        sha256: 5a59831d75ea7856009a680aff3dbaefad1d7a301438b5f40d5311066bf2a8a2
+        url: https://github.com/brave/brave-browser/releases/download/v1.67.105/brave-browser-beta-1.67.105-linux-amd64.zip
+        sha256: 7f3b8e780fec2431153b87d0ea596adee2b8bb6245dfc4614bb60c886a45fc32
         dest-filename: brave.zip
         only-arches: [x86_64]
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.67.100/brave-browser-beta-1.67.100-linux-arm64.zip
-        sha256: 15cc3f11ea905bc99268cdb41724bddb2ffedd84cd0d5a0c082ae5ed40a4df1a
+        url: https://github.com/brave/brave-browser/releases/download/v1.67.105/brave-browser-beta-1.67.105-linux-arm64.zip
+        sha256: bb7d3a9f57daa91db7ed0af723039088b0be51139ae547555fb292f20e7b8623
         dest-filename: brave.zip
         only-arches: [aarch64]
       - type: file
