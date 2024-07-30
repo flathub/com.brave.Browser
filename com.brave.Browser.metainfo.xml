@@ -3,29 +3,29 @@
 <component type="desktop-application">
   <id>com.brave.Browser</id>
   <launchable type="desktop-id">com.brave.Browser.desktop</launchable>
-  <name>Brave Browser</name>
+  <name>Brave</name>
   <developer_name>Brave Software</developer_name>
-  <summary>The web browser from Brave</summary>
+  <summary>Fast Internet, AI, Adblock</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MPL-2.0</project_license>
   <url type="homepage">https://brave.com/</url>
   <description>
-   <p>
-      Brave is on a mission to fix the web by giving users a safer, faster and better
-      browsing experience while growing support for content creators through a new
-      attention-based ecosystem of rewards.
-   </p>
-   <p>
-      Browse faster by blocking ads and trackers that violate your privacy and cost
-      you time and money.
-   </p>
+    <p>Brave is on a mission to fix the web by giving users a safer, faster and better browsing
+      experience while growing support for content creators through a new attention-based ecosystem
+      of rewards.</p>
+    <p>Browse faster by blocking ads and trackers that violate your privacy and cost you time and
+      money.</p>
   </description>
+  <branding>
+    <color type="primary" scheme_preference="light">#bd7277</color>
+    <color type="primary" scheme_preference="dark">#704646</color>
+  </branding>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/flathub/com.brave.Browser/beta/screenshot_mainpage.jpg</image>
+      <image xml:space="preserve">https://raw.githubusercontent.com/flathub/com.brave.Browser/beta/screenshot_mainpage.jpg</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/flathub/com.brave.Browser/beta/screenshot_welcomescreen.jpg</image>
+      <image xml:space="preserve">https://raw.githubusercontent.com/flathub/com.brave.Browser/beta/screenshot_welcomescreen.jpg</image>
     </screenshot>
   </screenshots>
   <releases>
