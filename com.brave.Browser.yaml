@@ -9,7 +9,6 @@ separate-locales: false
 build-options:
   no-debuginfo: true
 finish-args:
-  - --allow=multiarch
   - --device=all
   - --env=GTK_PATH=/app/lib/gtkmodules
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
