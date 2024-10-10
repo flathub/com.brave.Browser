@@ -8,9 +8,9 @@
   <summary>Block ads. Save data. And get way faster webpages.</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MPL-2.0</project_license>
-  <url type="homepage">https://brave.com/</url>
+  <url type="homepage">https://brave.com</url>
   <url type="bugtracker">https://github.com/brave/brave-browser/issues</url>
-  <url type="faq">https://brave.com/faq/</url>
+  <url type="faq">https://brave.com/faq</url>
   <url type="contribute">https://github.com/brave/brave-browser/blob/master/CONTRIBUTING.md</url>
   <url type="help">https://support.brave.com/hc/en-us</url>
   <description>
@@ -27,7 +27,7 @@
   <screenshots>
     <screenshot type="default">
       <image xml:space="preserve">https://raw.githubusercontent.com/flathub/com.brave.Browser/refs/heads/master/media/welcome.png</image>
-      <caption>Welcome Page of Brave</caption>
+      <caption>Welcome page of Brave</caption>
     </screenshot>
     <screenshot>
       <image xml:space="preserve">https://raw.githubusercontent.com/flathub/com.brave.Browser/refs/heads/master/media/new-tab.png</image>
