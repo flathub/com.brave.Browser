@@ -1,17 +1,13 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 # Merge the policies with the host ones.
-policy_root=/etc/brave/policies
-
-for policy_type in managed recommended enrollment; do
-  policy_dir="$policy_root/$policy_type"
-  mkdir -p "$policy_dir"
-
-  if [[ -d "/run/host/$policy_root/$policy_type" ]]; then
-    find "/run/host/$policy_root/$policy_type" -type f -name '*' \
-      -maxdepth 1 -name '*.json' -type f \
-      -exec ln -sf '{}' "$policy_root/$policy_type" \;
-  fi
+for proot in "etc/brave/policies" "etc/static/brave/policies"; do
+  for ptype in managed recommended enrollment; do
+    if [ -d "/run/host/$proot/$ptype" ]; then
+      mkdir -p "/etc/brave/policies/$ptype"
+      ln -sf "/run/host/$proot/$ptype"/*.json "/etc/brave/policies/$ptype" 2>/dev/null
+    fi
+  done
 done
 
 exec cobalt "$@" --no-default-browser-check
