@@ -95,7 +95,7 @@ modules:
     buildsystem: simple
     build-commands:
       - mkdir -p /app/brave
-      - bsdtar -xf brave.zip -C /app/brave
+      - bsdtar --no-same-owner -xf brave.zip -C /app/brave
       - install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser.desktop
       - install -Dm 644 brave_lion.svg /app/share/icons/hicolor/scalable/apps/com.brave.Browser.svg
       - install -Dm 755 brave.sh /app/bin/brave
