@@ -95,7 +95,7 @@ modules:
     buildsystem: simple
     build-commands:
       - mkdir -p /app/brave
-      - bsdtar -xf brave.zip -C /app/brave
+      - bsdtar --no-same-owner -xf brave.zip -C /app/brave
       - install -Dm 644 brave-browser.desktop /app/share/applications/com.brave.Browser.desktop
       - install -Dm 644 brave_lion.svg /app/share/icons/hicolor/scalable/apps/com.brave.Browser.svg
       - install -Dm 755 brave.sh /app/bin/brave
@@ -103,13 +103,13 @@ modules:
       - install -Dm 644 -t /app/share/metainfo com.brave.Browser.metainfo.xml
     sources:
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.77.97/brave-browser-1.77.97-linux-amd64.zip
-        sha256: 6d5974752019b6f4fff7e3e29620a95b4ee27cc4267a890cbb73e835309d8325
+        url: https://github.com/brave/brave-browser/releases/download/v1.77.100/brave-browser-1.77.100-linux-amd64.zip
+        sha256: 7122745a26999a7c885f5b0623ced311abe68eef3e86d59649ca23cb0f7eddde
         dest-filename: brave.zip
         only-arches: [x86_64]
       - type: file
-        url: https://github.com/brave/brave-browser/releases/download/v1.77.97/brave-browser-1.77.97-linux-arm64.zip
-        sha256: 9d96174adcdd4d71507f8f135e27a5b7f9e00c4cd646ca120cb2f830d3d2c122
+        url: https://github.com/brave/brave-browser/releases/download/v1.77.100/brave-browser-1.77.100-linux-arm64.zip
+        sha256: 2df94fb28fddac96240676b7edc861e1c96d14a8dda8e7913ced001465735b0d
         dest-filename: brave.zip
         only-arches: [aarch64]
       - type: file
