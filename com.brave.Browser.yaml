@@ -9,9 +9,8 @@ separate-locales: false
 build-options:
   no-debuginfo: true
 finish-args:
+  - --require-version=1.8.2
   - --device=all
-  - --env=GTK_PATH=/app/lib/gtkmodules
-  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
   - --share=ipc
   - --share=network
   - --socket=cups
@@ -19,8 +18,11 @@ finish-args:
   - --socket=pulseaudio
   - --socket=x11
   - --socket=wayland
-  - --require-version=1.8.2
+  - --allow=bluetooth # FIDO2 CTAP hybrid transport
+  - --system-talk-name=org.bluez
+  - --system-talk-name=org.freedesktop.Avahi
   - --system-talk-name=org.freedesktop.UPower
+  - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.FileManager1
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.ScreenSaver
@@ -33,17 +35,22 @@ finish-args:
   - --talk-name=org.cinnamon.ScreenSaver
   - --talk-name=org.mate.ScreenSaver
   - --talk-name=org.xfce.ScreenSaver
-  - --system-talk-name=org.freedesktop.Avahi
   - --own-name=org.mpris.MediaPlayer2.brave.*
+  - --filesystem=/run/.heim_org.h5l.kcm-socket
   - --filesystem=xdg-run/pipewire-0
   # To load policies on the host /etc/brave/policies
   - --filesystem=host-etc
   # To install a PWA application
   - --filesystem=home/.local/share/applications:create
   - --filesystem=home/.local/share/icons:create
+  # To allow installing shortcuts on the desktop
   - --filesystem=xdg-desktop
-  # For default download directory to work as expected (PR #324)
+  # For default download directory to work as expected
   - --filesystem=xdg-download
+  # For MPRIS media cover art
+  - --filesystem=/tmp
+  # For imported CA certificates
+  - --persist=.pki
   # For GNOME proxy resolution
   - --filesystem=xdg-run/dconf
   - --filesystem=~/.config/dconf:ro
@@ -53,8 +60,6 @@ finish-args:
   - --env=GSETTINGS_BACKEND=dconf
   # For KDE proxy resolution (KDE5 only)
   - --filesystem=~/.config/kioslaverc
-  - --filesystem=/run/.heim_org.h5l.kcm-socket
-  - --persist=.pki
 modules:
   - name: dconf
     buildsystem: meson
