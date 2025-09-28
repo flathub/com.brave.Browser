@@ -39,7 +39,7 @@ finish-args:
   - --filesystem=/run/.heim_org.h5l.kcm-socket
   - --filesystem=xdg-run/pipewire-0
   # To load policies on the host /etc/brave/policies
-  - --filesystem=host-etc
+  - --filesystem=host-etc/brave
   # To install a PWA application
   - --filesystem=home/.local/share/applications:create
   - --filesystem=home/.local/share/icons:create
