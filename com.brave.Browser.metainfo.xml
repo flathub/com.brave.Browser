@@ -269,4 +269,9 @@
   </releases>
   <content_rating type="oars-1.1"/>
   <update_contact>https://support.brave.com/hc/en-us/requests/new</update_contact>
+  <keywords>
+    <keyword>fast internet</keyword>
+    <keyword>ad blocker</keyword>
+    <keyword>privacy browser</keyword>
+  </keywords>
 </component>
