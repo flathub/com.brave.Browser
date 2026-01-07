@@ -35,6 +35,12 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.85.120" date="2026-01-07"/>
+    <release version="1.85.118" date="2025-12-19"/>
+    <release version="1.85.117" date="2025-12-17"/>
+    <release version="1.85.116" date="2025-12-11"/>
+    <release version="1.85.111" date="2025-12-03"/>
+    <release version="1.84.141" date="2025-11-18"/>
     <release version="1.84.139" date="2025-11-12"/>
     <release version="1.84.135" date="2025-11-06"/>
     <release version="1.84.132" date="2025-10-29"/>
@@ -268,4 +274,9 @@
   </releases>
   <content_rating type="oars-1.1"/>
   <update_contact>https://support.brave.com/hc/en-us/requests/new</update_contact>
+  <keywords>
+    <keyword>fast internet</keyword>
+    <keyword>ad blocker</keyword>
+    <keyword>privacy browser</keyword>
+  </keywords>
 </component>
